@@ -6,7 +6,7 @@ module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', '*');
 
-  if (req.method === 'OPTIONS') {
+  if (req.method === 'OPTIONS' || url.includes('favicon')) {
     return res.status(204).end();
   }
 

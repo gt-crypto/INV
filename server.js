@@ -94,6 +94,13 @@ const server = http.createServer((req, res) => {
     pathname = '/index.html';
   }
 
+  // Explicitly return 204 No Content for favicon requests so browser removes icon
+  if (pathname === '/favicon.ico' || pathname.startsWith('/favicons/')) {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+
   // Handle Mock API Endpoints
   if (pathname.startsWith('/rest/api/')) {
     // 1. Customized templates (fallback endpoint)
