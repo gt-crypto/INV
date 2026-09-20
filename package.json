@@ -1,0 +1,12 @@
+{
+  "name": "eng007-livedemo",
+  "version": "1.0.0",
+  "description": "Eng007 Live Demo - Local Runner",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["invitationnation", "eng007", "live-demo"],
+  "author": "",
+  "license": "ISC"
+}

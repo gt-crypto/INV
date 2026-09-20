@@ -1,0 +1,372 @@
+{
+  "status": 200,
+  "message": "Fetched template",
+  "data": {
+    "id": "6a47a55399d0f228a2447a9a",
+    "templateCode": "eng007",
+    "slug": "eng007-livedemo",
+    "seoUrl": "pink-rose-classic-illustration",
+    "category": {
+      "id": "69f31b03626e9478f9090b9c",
+      "categoryType": "ENGAGEMENT",
+      "description": "Engagement Template",
+      "thumbnail": "https://cdn-admin.invitationnation.in/categories/730725cf-eb96-473f-a638-13833caaaf41_freepik__a-detailed-cinematic-macro-photograph-of-the-ring-__18503__2_.webp",
+      "templateCount": 4,
+      "isDeleted": false,
+      "createdAt": "2026-04-30T09:04:03.250+00:00",
+      "updatedAt": "2026-07-03T12:04:35.937+00:00",
+      "createdBy": "chethan@codenimbussolutions.com",
+      "updatedBy": "chethan@codenimbussolutions.com"
+    },
+    "categoryType": "ENGAGEMENT",
+    "sectionVersion": {
+      "id": "69f31ca2626e9478f9090ba9",
+      "categoryId": "69f31b03626e9478f9090b9c",
+      "versionName": "E1",
+      "isActive": true,
+      "versionJson": {
+        "sections": [
+          {
+            "id": "hero",
+            "label": "Invitation Header",
+            "fields": [
+              {
+                "key": "invitation_text",
+                "label": "Request for Presence",
+                "type": "textarea",
+                "placeholder": "Together with their families, we cordially invite you to celebrate...",
+                "required": true
+              },
+              {
+                "key": "main_event_date",
+                "label": "Date & Time",
+                "type": "datetime-local",
+                "required": true
+              },
+              {
+                "key": "contact",
+                "label": "Contact Number",
+                "type": "text",
+                "placeholder": "+91 1234567890",
+                "required": true
+              }
+            ]
+          },
+          {
+            "id": "music",
+            "label": "Background Music",
+            "fields": [
+              {
+                "key": "selected_song",
+                "label": "Choose Song",
+                "type": "select",
+                "options": [
+                  {
+                    "label": "None",
+                    "value": "none"
+                  }
+                ]
+              },
+              {
+                "key": "custom_song",
+                "label": "Upload Song",
+                "type": "select",
+                "options": [
+                  {
+                    "label": "None",
+                    "value": "none"
+                  },
+                  {
+                    "label": "Add Audio",
+                    "value": "upload"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bride_details",
+            "label": "Bride's Profile",
+            "fields": [
+              {
+                "key": "bride_name",
+                "label": "Bride's Name",
+                "type": "text",
+                "required": true
+              },
+              {
+                "key": "bride_photo",
+                "label": "Bride's Photo",
+                "type": "image",
+                "aspect_ratio": "3:4"
+              },
+              {
+                "key": "bride_parents",
+                "label": "Bride's Parents",
+                "type": "text"
+              },
+              {
+                "key": "bride_description",
+                "label": "About the Bride",
+                "type": "textarea",
+                "max_chars": 200
+              }
+            ]
+          },
+          {
+            "id": "groom_details",
+            "label": "Groom's Profile",
+            "fields": [
+              {
+                "key": "groom_name",
+                "label": "Groom's Name",
+                "type": "text",
+                "required": true
+              },
+              {
+                "key": "groom_photo",
+                "label": "Groom's Photo",
+                "type": "image",
+                "aspect_ratio": "3:4"
+              },
+              {
+                "key": "groom_parents",
+                "label": "Groom's Parents",
+                "type": "text"
+              },
+              {
+                "key": "groom_description",
+                "label": "About the Groom",
+                "type": "textarea",
+                "max_chars": 200
+              }
+            ]
+          },
+          {
+            "id": "wishes_settings",
+            "label": "Wishes Settings",
+            "fields": [
+              {
+                "key": "show_wishes",
+                "label": "Show Wishes Section",
+                "type": "toggle",
+                "default": true
+              }
+            ]
+          },
+          {
+            "id": "schedule",
+            "label": "Event Schedule",
+            "type": "array",
+            "allow_add": true,
+            "item_label": "Event",
+            "fields": [
+              {
+                "key": "eventName",
+                "label": "Event Name",
+                "type": "text"
+              },
+              {
+                "key": "eventTime",
+                "label": "Time",
+                "type": "text",
+                "placeholder": "7:00 PM onwards"
+              },
+              {
+                "key": "logo_icon",
+                "label": "Event Icon",
+                "type": "icon_picker"
+              }
+            ]
+          },
+          {
+            "id": "venue",
+            "label": "Venue & Location",
+            "fields": [
+              {
+                "key": "venue_name",
+                "label": "Venue Name",
+                "type": "text",
+                "placeholder": "The Grand Palace"
+              },
+              {
+                "key": "venue_location_link",
+                "label": "Google Maps Link",
+                "type": "location"
+              },
+              {
+                "key": "venue_description",
+                "label": "Location Description",
+                "type": "textarea",
+                "placeholder": "Address details or landmark info..."
+              }
+            ]
+          },
+          {
+            "id": "love_story_settings",
+            "label": "Love Story Settings",
+            "fields": [
+              {
+                "key": "show_section",
+                "label": "Show Love Story Section",
+                "type": "toggle",
+                "default": true
+              }
+            ]
+          },
+          {
+            "id": "our_story",
+            "label": "Our Love Story",
+            "type": "array",
+            "allow_add": true,
+            "item_label": "Story Chapter",
+            "fields": [
+              {
+                "key": "date",
+                "label": "Date/Period",
+                "type": "date"
+              },
+              {
+                "key": "title",
+                "label": "Title",
+                "type": "text",
+                "placeholder": "First Date"
+              },
+              {
+                "key": "description",
+                "label": "Story Text",
+                "type": "textarea",
+                "max_chars": 200
+              },
+              {
+                "key": "image",
+                "label": "Story Photo",
+                "type": "image",
+                "aspect_ratio": "3:4"
+              }
+            ]
+          },
+          {
+            "id": "family_settings",
+            "label": "Family Settings",
+            "fields": [
+              {
+                "key": "show_family",
+                "label": "Show Family Section",
+                "type": "toggle",
+                "default": true
+              }
+            ]
+          },
+          {
+            "id": "family",
+            "label": "Meet the Family",
+            "fields": [
+              {
+                "key": "bride_family_photo",
+                "label": "Bride's Family Photo",
+                "type": "image",
+                "aspect_ratio": "16:9"
+              },
+              {
+                "key": "groom_family_photo",
+                "label": "Groom's Family Photo",
+                "type": "image",
+                "aspect_ratio": "16:9"
+              }
+            ]
+          },
+          {
+            "id": "gallery_settings",
+            "label": "Gallery Settings",
+            "fields": [
+              {
+                "key": "allow_upload",
+                "label": "Allow Guest Upload",
+                "type": "toggle",
+                "default": true
+              }
+            ]
+          }
+        ]
+      },
+      "createdAt": "2026-04-30T09:10:58.998+00:00",
+      "updatedAt": "2026-09-09T12:54:41.420+00:00",
+      "createdBy": "chethan@codenimbussolutions.com",
+      "updatedBy": "chethan@codenimbussolutions.com"
+    },
+    "sectionSnapshot": {
+      "template_id": "eng007",
+      "config": {},
+      "content": {
+        "hero": {
+          "invitation_text": "Two individuals, one collective direction. Finding a rhythm that feels like home. No matter where the road leads or how it turns. Everything feels right when standing side by side. ",
+          "main_event_date": "2026-10-31T10:45",
+          "contact": "+91 6364469555"
+        },
+        "bride_details": {
+          "bride_name": "Ananya Sharma",
+          "bride_parents": "D/o Mr. Rajesh & Mrs. Sunita Sharma",
+          "bride_description": "A free spirit wrapped in grace, Ananya moves through life with quiet confidence, an infectious laugh, and a kindness that makes everyone around her feel at home.",
+          "bride_photo": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/5c6d525c-5ff5-47e5-ac52-895a120389ca_image.jpg",
+          "bride_family_photo": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/48202286-b061-4903-9ad0-d7d812dcd266_image.jpg"
+        },
+        "groom_details": {
+          "groom_name": "Aarav Verma",
+          "groom_parents": "S/o Mr. Anand & Mrs. Kavitha Verma",
+          "groom_description": "A gentle soul with a poet's heart and an architect's mind, Aarav finds beauty in the details, whether in the curve of a building or the warmth of a quiet afternoon.",
+          "groom_photo": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/eda11278-f82b-4c3c-9f69-b15336041793_image.jpg",
+          "groom_family_photo": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/b9844901-146d-4987-86fd-9580ec5253f7_image.jpg"
+        },
+        "our_story": [
+          {
+            "date": "21 July , 2021",
+            "title": "first meet",
+            "description": "As the evening breeze carried laughter through the garden, Aarav gathered the courage to tell Ananya how he felt. Her smile said everything, and that magical moment became the start of forever.",
+            "image": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/6c3c929a-5c51-4bbe-9237-193981fa023e_image.jpg"
+          }
+        ],
+        "venue": {
+          "venue_name": "Hall Complex",
+          "venue_location_link": "https://maps.google.com/?cid=3260281787863214776&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en-US&source=apiv3",
+          "venue_description": "Hall Complex, 1st B Cross Road, 7th Block, Koramangala, Bengaluru, Karnataka, India"
+        },
+        "schedule": [
+          {
+            "eventName": "Ring Ceremony",
+            "eventTime": "11:00 AM",
+            "logo_icon": "FaRing"
+          },
+          {
+            "eventName": "Cake Cutting",
+            "eventTime": "11:30 AM",
+            "logo_icon": "FaCakeCandles"
+          },
+          {
+            "eventName": "Lunch",
+            "eventTime": "01:00 PM",
+            "logo_icon": "MdRestaurant"
+          }
+        ],
+        "music": {
+          "selected_song": "https://cdn-admin.invitationnation.in/categories/69f31b03626e9478f9090b9c/music/70d118c9-a563-4ddf-b09a-275689883e5b_Engagement.mp3",
+          "custom_song": "none"
+        },
+        "family": {
+          "bride_family_photo": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/d4a80c08-2514-4162-adbd-6fc5e8052915_image.jpg",
+          "groom_family_photo": "ADMIN|admin/templates/6a47a55399d0f228a2447a9a/69a5594e-78eb-4110-931b-d965c7344094_image.jpg"
+        }
+      },
+      "styles": {},
+      "images": {
+        "bride_details|bride_photo": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/5c6d525c-5ff5-47e5-ac52-895a120389ca_image.jpg",
+        "bride_details|bride_family_photo": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/48202286-b061-4903-9ad0-d7d812dcd266_image.jpg",
+        "groom_details|groom_photo": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/eda11278-f82b-4c3c-9f69-b15336041793_image.jpg",
+        "groom_details|groom_family_photo": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/b9844901-146d-4987-86fd-9580ec5253f7_image.jpg",
+        "our_story|0|image": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/6c3c929a-5c51-4bbe-9237-193981fa023e_image.jpg",
+        "family|bride_family_photo": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/d4a80c08-2514-4162-adbd-6fc5e8052915_image.jpg",
+        "family|groom_family_photo": "https://cdn-admin.invitationnation.in/admin/templates/6a47a55399d0f228a2447a9a/69a5594e-78eb-4110-931b-d965c7344094_image.jpg"
+      }
+    }
+  }
+}

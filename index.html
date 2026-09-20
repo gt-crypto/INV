@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+
+    <title>Invitation Nation | Create Beautiful Custom Invitations</title>
+    <meta
+      name="title"
+      content="Invitation Nation | Create Beautiful Custom Invitations"
+    />
+    <meta
+      name="description"
+      content="Design and share stunning digital invitations for weddings, birthdays, and special events in minutes."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://app.invitationnation.in/" />
+    <meta
+      property="og:title"
+      content="Invitation Nation | Create Beautiful Custom Invitations"
+    />
+    <meta
+      property="og:description"
+      content="Design and share stunning digital invitations for weddings, birthdays, and special events in minutes."
+    />
+    <meta
+      property="og:image"
+      content="/favicons/social-preview.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitation Nation</title>
+
+    <!-- Google Fonts Links for Arizonia & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <!-- Local font fallback definitions & Hide Watermark Footer -->
+    <style>
+      @font-face {
+        font-family: 'Arizonia';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/arizonia.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/lora.woff2') format('woff2');
+      }
+
+      /* Hide InvitationNation Branding / Watermark Footer */
+      #shared-footer-main,
+      .shared-footer-main {
+        display: none !important;
+      }
+    </style>
+
+    <!-- Keep clean URL: provide 'eng007-livedemo' slug internally without polluting URL bar -->
+    <script>
+      (function() {
+        const origGet = URLSearchParams.prototype.get;
+        URLSearchParams.prototype.get = function(name) {
+          if (name === 'slug') {
+            const val = origGet.call(this, name);
+            return val || 'eng007-livedemo';
+          }
+          return origGet.call(this, name);
+        };
+        // Clean URL if query parameter was previously visible
+        if (window.location.search.includes('slug=')) {
+          const cleanUrl = window.location.pathname + (window.location.hash || '');
+          window.history.replaceState(null, '', cleanUrl);
+        }
+      })();
+    </script>
+
+    <!-- Intercept network requests to enable full offline / local execution -->
+    <script>
+      (function() {
+        function transformUrl(url) {
+          if (typeof url !== 'string') return url;
+          if (url.startsWith('https://api.invitationnation.in')) {
+            return url.replace('https://api.invitationnation.in', '');
+          }
+          if (url.startsWith('https://cdn-admin.invitationnation.in')) {
+            return url.replace('https://cdn-admin.invitationnation.in', '/cdn');
+          }
+          return url;
+        }
+
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url, ...rest) {
+          const transformed = transformUrl(url);
+          return originalOpen.call(this, method, transformed, ...rest);
+        };
+
+        const originalFetch = window.fetch;
+        window.fetch = function(input, init) {
+          if (typeof input === 'string') {
+            input = transformUrl(input);
+          } else if (input instanceof Request) {
+            const transformed = transformUrl(input.url);
+            if (transformed !== input.url) {
+              input = new Request(transformed, init || input);
+            }
+          }
+          return originalFetch.call(this, input, init);
+        };
+      })();
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-DMfT4SDs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BDU91TJB.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

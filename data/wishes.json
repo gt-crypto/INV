@@ -1,0 +1,33 @@
+{
+  "status": 200,
+  "message": "Fetched",
+  "data": {
+    "list": [
+      {
+        "id": "6a69d62515ea3275918e1bed",
+        "authorName": "Adithya",
+        "message": "Congratulations on your engagement! May this lovely chapter be filled with love, laughter, unforgettable moments, and beautiful dreams. Wishing you both a lifetime of happiness and togetherness ahead.",
+        "status": "PUBLIC",
+        "updatedAt": "2026-07-29T10:38:35.245+00:00"
+      },
+      {
+        "id": "6a69d63215ea3275918e1bee",
+        "authorName": "Manya",
+        "message": "May your engagement be the start of a beautiful journey where love grows deeper, laughter becomes sweeter, and each shared dream brings you ever closer. Wishing you endless happiness and joy together.",
+        "status": "PUBLIC",
+        "updatedAt": "2026-07-29T10:38:34.247+00:00"
+      },
+      {
+        "id": "6a4b73c899d0f228a2447c29",
+        "authorName": "Mahesh",
+        "message": "May your engagement mark the beginning of a lifetime filled with love, joy, and unforgettable moments together.",
+        "status": "PUBLIC",
+        "updatedAt": "2026-07-06T09:22:21.134+00:00"
+      }
+    ],
+    "page": 0,
+    "size": 10,
+    "totalElements": 3,
+    "totalPages": 1
+  }
+}
