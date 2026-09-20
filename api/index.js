@@ -1,12 +1,18 @@
-const fs = require('fs');
-const path = require('path');
+const templateData = require('../data/eng007-livedemo.json');
+const wishesData = require('../data/wishes.json');
+const galleryData = require('../data/gallery.json');
+const mediaIndex = require('../cdn/media/eng007/index/index.json');
+
+// Pre-rewrite CDN URLs to local paths
+const templateJsonString = JSON.stringify(templateData).replace(/https:\/\/cdn-admin\.invitationnation\.in/g, '/cdn');
+const mediaIndexString = JSON.stringify(mediaIndex).replace(/https:\/\/cdn-admin\.invitationnation\.in/g, '/cdn');
 
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', '*');
 
-  if (req.method === 'OPTIONS' || url.includes('favicon')) {
+  if (req.method === 'OPTIONS' || (req.url && req.url.includes('favicon'))) {
     return res.status(204).end();
   }
 
@@ -14,23 +20,22 @@ module.exports = (req, res) => {
 
   // 1. Template data
   if (url.includes('/templates/slug/')) {
-    try {
-      const filePath = path.join(process.cwd(), 'data', 'eng007-livedemo.json');
-      let content = fs.readFileSync(filePath, 'utf8');
-      content = content.replace(/https:\/\/cdn-admin\.invitationnation\.in/g, '/cdn');
-      res.setHeader('Content-Type', 'application/json');
-      return res.status(200).send(content);
-    } catch (e) {
-      return res.status(500).json({ error: e.message });
-    }
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(200).send(templateJsonString);
   }
 
-  // 2. Customized template fallback
+  // 2. Customized template fallback (must return 404 so client fetches slug)
   if (url.includes('/customized-templates/')) {
     return res.status(404).json({ status: 404, message: 'Customized template not found' });
   }
 
-  // 3. Wishes GET / POST
+  // 3. Media index
+  if (url.includes('/index/index.json')) {
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(200).send(mediaIndexString);
+  }
+
+  // 4. Wishes GET / POST
   if (url.includes('/wishes/')) {
     if (req.method === 'POST') {
       let body = '';
@@ -55,24 +60,14 @@ module.exports = (req, res) => {
       return;
     }
 
-    const filePath = path.join(process.cwd(), 'data', 'wishes.json');
-    if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, 'utf8');
-      res.setHeader('Content-Type', 'application/json');
-      return res.status(200).send(content);
-    }
-    return res.status(200).json({ status: 200, data: { list: [], totalPages: 0 } });
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(200).json(wishesData);
   }
 
-  // 4. Gallery
+  // 5. Gallery
   if (url.includes('/gallery/')) {
-    const filePath = path.join(process.cwd(), 'data', 'gallery.json');
-    if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, 'utf8');
-      res.setHeader('Content-Type', 'application/json');
-      return res.status(200).send(content);
-    }
-    return res.status(200).json({ status: 200, data: [] });
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(200).json(galleryData);
   }
 
   return res.status(200).json({ status: 200, message: 'ok', data: [] });

@@ -59,25 +59,6 @@
       }
     </style>
 
-    <!-- Keep clean URL: provide 'eng007-livedemo' slug internally without polluting URL bar -->
-    <script>
-      (function() {
-        const origGet = URLSearchParams.prototype.get;
-        URLSearchParams.prototype.get = function(name) {
-          if (name === 'slug') {
-            const val = origGet.call(this, name);
-            return val || 'eng007-livedemo';
-          }
-          return origGet.call(this, name);
-        };
-        // Clean URL if query parameter was previously visible
-        if (window.location.search.includes('slug=')) {
-          const cleanUrl = window.location.pathname + (window.location.hash || '');
-          window.history.replaceState(null, '', cleanUrl);
-        }
-      })();
-    </script>
-
     <!-- Intercept network requests to enable full offline / local execution -->
     <script>
       (function() {
