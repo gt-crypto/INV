@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/cdn-admin/(.*)", "destination": "/cdn/$1" },
+    { "source": "/rest/api/(.*)", "destination": "/api/index.js" }
+  ]
+}
